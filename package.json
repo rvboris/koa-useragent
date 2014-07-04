@@ -1,0 +1,33 @@
+{
+  "name": "koa-useragent",
+  "version": "0.0.1",
+  "description": "Koa.js middleware for useragent detection",
+  "main": "index.js",
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --harmony-generators --reporter spec --bail"
+  },
+  "keywords": [
+    "koa",
+    "middleware",
+    "useragent"
+  ],
+  "author": "Boris Ryabov <rbs@anontalk.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:rvboris/koa-useragent.git"
+  },
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "grunt": "^0.4.2",
+    "grunt-bump": "^0.0.13",
+    "koa": "^0.3.0",
+    "matchdep": "^0.3.0",
+    "mocha": "^1.17.1",
+    "supertest": "^0.9.2"
+  },
+  "engines": {
+    "node": "0.11.*"
+  },
+  "dependencies": {}
+}
