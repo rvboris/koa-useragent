@@ -1,5 +1,5 @@
 [![build status](https://secure.travis-ci.org/rvboris/koa-useragent.png)](http://travis-ci.org/rvboris/koa-useragent)
-[![NPM version](https://badge.fury.io/js/express-useragent.png)](http://badge.fury.io/js/express-useragent)
+[![NPM version](https://badge.fury.io/js/koa-useragent.svg)](http://badge.fury.io/js/koa-useragent)
 # Fast Middleware exposing user-agent for [koa.js](http://koajs.com/) based on [express-useragent](https://github.com/biggora/express-useragent)
 
 koa-useragent is a simple koa.js user-agent middleware exposing user-agent details to your application.

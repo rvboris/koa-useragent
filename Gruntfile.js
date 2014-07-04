@@ -18,5 +18,5 @@ module.exports = function (grunt) {
     var plugins = require('matchdep').filterDev('grunt-*');
     plugins.forEach(grunt.loadNpmTasks);
 
-    grunt.registerTask('default', ['bump-only:patch', 'readme', 'bump-commit']);
+    grunt.registerTask('default', ['bump-only:patch', 'bump-commit']);
 };
