@@ -1,14 +1,20 @@
+koa-useragent
+=====
+
 [![build status](https://secure.travis-ci.org/rvboris/koa-useragent.png)](http://travis-ci.org/rvboris/koa-useragent)
 [![NPM version](https://badge.fury.io/js/koa-useragent.svg)](http://badge.fury.io/js/koa-useragent)
-## Fast Middleware exposing user-agent for [koa.js](http://koajs.com/) based on [express-useragent](https://github.com/biggora/express-useragent)
 
-koa-useragent is a simple koa.js user-agent middleware exposing user-agent details to your application.
+[![NPM](https://nodei.co/npm/koa-useragent.png?downloads=true)](https://nodei.co/npm/koa-useragent/)
 
-## Installation
+**Fast Middleware exposing user-agent for [koa.js](http://koajs.com/) based on [express-useragent](https://github.com/biggora/express-useragent)**
+
+----
+
+### Installation
 
     $ npm install koa-useragent
 
-## Usage overview
+### Usage overview
 
 ```js
 var koa = require('koa')
@@ -41,13 +47,13 @@ Module provides details such as the following:
 
 ```
 
-## Author
+### Author
 
 Boris Ryabov (rbs@anontalk.org).
 
 Based on [express-useragent](https://github.com/biggora/express-useragent) by Aleksej Gordejev (aleksej@gordejev.lv).
 
-## License
+### License
 
 (The MIT License)
 
@@ -73,7 +79,7 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-## Resources
+### Resources
 
 - Visit the [author website](http://www.heavycode.ru).
 - Follow [@rvboris](https://twitter.com/#!/rvboris) on Twitter for updates.
