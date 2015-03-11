@@ -437,7 +437,7 @@ module.exports = function() {
     };
 
     return function *(next) {
-        var source = this.req.headers['user-agent'] || '';
+        var source = this.request.headers['user-agent'] || '';
         var ua = new UserAgent();
 
         if (typeof(source) === 'undefined') {
@@ -449,13 +449,13 @@ module.exports = function() {
         ua.Agent.Platform = ua.getPlatform(ua.Agent.source);
         ua.Agent.Browser = ua.getBrowser(ua.Agent.source);
         ua.Agent.Version = ua.getBrowserVersion(ua.Agent.source);
-        ua.testNginxGeoIP(this.req.headers);
+        ua.testNginxGeoIP(this.request.headers);
         ua.testBot();
         ua.testMobile();
         ua.testAndriodTablet();
         ua.testCompatibilityMode();
 
-        this.req.userAgent = ua.Agent;
+        this.state.userAgent = ua.Agent;
 
         yield next;
     };
