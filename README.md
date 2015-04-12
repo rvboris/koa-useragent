@@ -24,7 +24,7 @@ var koa = require('koa')
 app.use(userAgent());
 
 app.use(function *(next) {
-    console.log(require('util').inspect(this.req.userAgent));
+    console.log(require('util').inspect(this.request.userAgent));
 });
 
 app.listen(3000);
@@ -49,7 +49,7 @@ Module provides details such as the following:
 
 ### Author
 
-Boris Ryabov (rbs@anontalk.org).
+Boris Ryabov (rv.boris@yandex.ru).
 
 Based on [express-useragent](https://github.com/biggora/express-useragent) by Aleksej Gordejev (aleksej@gordejev.lv).
 
@@ -81,6 +81,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### Resources
 
-- Visit the [author website](http://www.heavycode.ru).
+- Visit the [author website](http://www.bryabov.ru).
 - Follow [@rvboris](https://twitter.com/#!/rvboris) on Twitter for updates.
 - Report issues on the [github issues](https://github.com/rvboris/koa-rvboris/issues) page.
