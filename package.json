@@ -1,6 +1,6 @@
 {
   "name": "koa-useragent",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Koa.js middleware for useragent detection",
   "main": "index.js",
   "scripts": {
