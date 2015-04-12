@@ -4,5 +4,6 @@ node_js:
 branches:
   only:
     - master
+    - development
 before_script:
   - npm install -g grunt-cli
