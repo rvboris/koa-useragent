@@ -12,5 +12,11 @@ exports['koa'] = function(test) {
     yield next;
   });
 
-  request(app.listen()).get('/').end(test.done)
+  request(app.listen()).get('/').end(function() {
+    test.done();
+    
+    setTimeout(function() {
+      process.exit();
+    });
+  });
 };
