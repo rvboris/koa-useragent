@@ -5,6 +5,8 @@ module.exports = function() {
     var source =  this.request.headers['user-agent'] || '';
     var ua = userAgent;
 
+    ua.reset();
+
     if (typeof source === 'undefined') {
         source = "unknown";
     }
