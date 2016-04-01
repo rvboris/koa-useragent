@@ -27,7 +27,7 @@
     "node": ">=4.4.1"
   },
   "release": {
-    "debug": true
+    "debug": false
   },
   "dependencies": {}
 }
