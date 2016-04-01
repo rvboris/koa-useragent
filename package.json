@@ -18,10 +18,10 @@
     "url": "https://github.com/rvboris/koa-useragent.git"
   },
   "devDependencies": {
-    "koa": "^0.18.0",
+    "koa": "^1.2.0",
     "nodeunit": "^0.9.1",
-    "supertest": "https://registry.npmjs.org/supertest/-/supertest-0.9.2.tgz",
-    "semantic-release": "^4.3.5"
+    "semantic-release": "^4.3.5",
+    "supertest": "^1.2.0"
   },
   "engines": {
     "node": ">=4.4.1"
