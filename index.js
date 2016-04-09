@@ -1,14 +1,14 @@
 module.exports = function() {
   var userAgent = new require('./lib/useragent').UserAgent();
 
-  return function*(next) {
+  return function *(next) {
     var source =  this.request.headers['user-agent'] || '';
     var ua = userAgent;
 
     ua.reset();
 
     if (typeof source === 'undefined') {
-        source = "unknown";
+        source = 'unknown';
     }
 
     ua.Agent.source = source.replace(/^\s*/, '').replace(/\s*$/, '');
