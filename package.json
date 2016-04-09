@@ -24,10 +24,12 @@
     "supertest": "^1.2.0"
   },
   "engines": {
-    "node": ">=4.4.1"
+    "node": ">=0.12"
   },
   "release": {
-    "debug": true
+    "debug": false
   },
-  "dependencies": {}
+  "dependencies": {
+    "object-assign": "^4.0.1"
+  }
 }
