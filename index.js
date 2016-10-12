@@ -2,12 +2,8 @@ var UserAgent = require('./lib/useragent').UserAgent;
 
 module.exports = function() {
   return function *(next) {
-    var source =  this.request.headers['user-agent'] || '';
+    var source =  this.request.headers['user-agent'] || 'unknown';
     var ua = new UserAgent();
-
-    if (typeof source === 'undefined') {
-        source = 'unknown';
-    }
 
     ua.Agent.source = source.replace(/^\s*/, '').replace(/\s*$/, '');
     ua.Agent.os = ua.getOS(ua.Agent.source);
