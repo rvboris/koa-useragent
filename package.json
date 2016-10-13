@@ -3,7 +3,7 @@
   "description": "Koa.js middleware for useragent detection",
   "main": "index.js",
   "scripts": {
-    "test": "node --harmony node_modules/nodeunit/bin/nodeunit test/browsers.js test/bots.js test/koa.js",
+    "test": "node --harmony node_modules/nodeunit/bin/nodeunit test",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
@@ -18,15 +18,15 @@
     "url": "https://github.com/rvboris/koa-useragent.git"
   },
   "devDependencies": {
-    "koa": "^1.2.0",
-    "nodeunit": "^0.9.1",
+    "koa": "^1.2.4",
+    "nodeunit": "^0.10.2",
     "semantic-release": "^4.3.5",
-    "supertest": "^1.2.0"
+    "supertest": "^2.0.0"
   },
   "engines": {
     "node": ">=0.12"
   },
   "dependencies": {
-    "object-assign": "^4.0.1"
+    "object-assign": "^4.1.0"
   }
 }
