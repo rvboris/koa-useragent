@@ -10,6 +10,9 @@ koa-useragent
 
 ----
 
+### Koa2 support
+**After version 1.0.0 it supports koa 2 and required node >= 7.6.0, if you need older version don't update**
+
 ### Installation
 
     $ npm install koa-useragent
@@ -17,14 +20,14 @@ koa-useragent
 ### Usage overview
 
 ```js
-var koa = require('koa')
-  , app = koa.app()
-  , userAgent = require('koa-useragent');
+const koa = require('koa'),
+const app = koa.app()
+const UserAgent = require('koa-useragent');
 
-app.use(userAgent());
+app.use(UserAgent);
 
-app.use(function *(next) {
-    console.log(require('util').inspect(this.state.userAgent));
+app.use(async (ctx, next) {
+    console.log(require('util').inspect(ctx.userAgent));
 });
 
 app.listen(3000);
