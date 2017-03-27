@@ -1,22 +1,21 @@
-var userAgent = new require('../');
-var koa = new require('koa');
-var request = new require('supertest');
+const http = require('http');
+const test = require('ava');
+const request = require('supertest');
+const Koa = require('koa');
 
-exports['koa'] = function(test) {
-  var app = koa();
+const userAgent = require('../');
 
-  app.use(userAgent());
+test('koa middleware', async (t) => {
+  const app = new Koa();
 
-  app.use(function *(next) {
-    test.ok(this.state.userAgent, Object);
-    yield next;
+  app.use(userAgent);
+
+  t.plan(1);
+
+  app.use(async (ctx, next) => {
+    t.true(!!ctx.userAgent);
+    await next();
   });
 
-  request(app.listen()).get('/').end(function() {
-    test.done();
-
-    setTimeout(function() {
-      process.exit();
-    });
-  });
-}
+  await request(http.createServer(app.callback())).get('/');
+});

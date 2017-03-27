@@ -3,7 +3,8 @@
   "description": "Koa.js middleware for useragent detection",
   "main": "index.js",
   "scripts": {
-    "test": "node --harmony node_modules/nodeunit/bin/nodeunit test",
+    "test": "ava",
+    "lint": "node_modules/.bin/eslint ./",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
@@ -18,15 +19,18 @@
     "url": "https://github.com/rvboris/koa-useragent.git"
   },
   "devDependencies": {
-    "koa": "^1.2.4",
-    "nodeunit": "^0.10.2",
-    "semantic-release": "^4.3.5",
-    "supertest": "^2.0.0"
+    "ava": "^0.18.2",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "koa": "^2.2.0",
+    "semantic-release": "^6.3.2",
+    "supertest": "^3.0.0"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=7.6.0"
   },
-  "dependencies": {
-    "object-assign": "^4.1.0"
-  }
+  "version": "0.0.0-development"
 }
