@@ -22,9 +22,9 @@ koa-useragent
 ```js
 const koa = require('koa'),
 const app = koa.app()
-const UserAgent = require('koa-useragent');
+const userAgent = require('koa-useragent');
 
-app.use(UserAgent);
+app.use(userAgent);
 
 app.use(async (ctx, next) {
     console.log(require('util').inspect(ctx.userAgent));
