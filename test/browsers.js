@@ -564,6 +564,34 @@ test('OS X Chromium', (t) => {
   t.true(!a.isIECompatibilityMode);
 });
 
+// Source: copied from an OnePlus phone
+test('Android 8.0 Chrome', (t) => {
+  const s = 'Mozilla/5.0 (Linux; Android 8.0.0; ONEPLUS A3003 Build/OPR6.170623.013) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/64.0.3282.137 Mobile Safari/537.36';
+
+  const a = new UserAgent(s);
+
+  t.true(a.isAuthoritative, 'Authoritative');
+  t.true(a.isMobile, 'Mobile');
+  t.true(!a.isiPad, 'iPad');
+  t.true(!a.isiPod, 'iPod');
+  t.true(!a.isiPhone, 'iPhone');
+  t.true(a.isAndroid, 'Android');
+  t.true(!a.isBlackberry, 'Blackberry');
+  t.true(!a.isOpera, 'Opera');
+  t.true(!a.isIE, 'IE');
+  t.true(!a.isSafari, 'Safari');
+  t.true(!a.isFirefox, 'Firefox');
+  t.true(!a.isWebkit, 'Webkit');
+  t.true(a.isChrome, 'Chrome');
+  t.true(!a.isKonqueror, 'Konqueror');
+  t.true(!a.isDesktop, 'Desktop');
+  t.true(!a.isWindows, 'Windows');
+  t.true(a.isLinux, 'Linux');
+  t.true(!a.isMac, 'Mac');
+  t.true(!a.isWindowsPhone, 'Windows Phone');
+  t.is(a.version, '64.0.3282.137');
+});
+
 // Source:
 // http://www.gtrifonov.com/2011/04/15/google-android-user-agent-strings-2/
 test('Android Samsung', (t) => {
