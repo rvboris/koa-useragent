@@ -1106,3 +1106,32 @@ test('PhantomJS', (t) => {
   t.is(a.version, '1.9.8');
   t.true(!a.isIECompatibilityMode);
 });
+
+test('OS X Electron', (t) => {
+  const s = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_3) AppleWebKit/537.36 (KHTML, like Gecko) electron-app-name/1.0.0 Chrome/59.0.3071.115 Electron/1.8.3 Safari/537.36';
+
+  const a = new UserAgent(s);
+
+  t.true(a.isAuthoritative, 'Authoritative');
+  t.true(!a.isMobile, 'Mobile');
+  t.true(!a.isiPad, 'iPad');
+  t.true(!a.isiPod, 'iPod');
+  t.true(!a.isiPhone, 'iPhone');
+  t.true(!a.isAndroid, 'Android');
+  t.true(!a.isBlackberry, 'Blackberry');
+  t.true(!a.isOpera, 'Opera');
+  t.true(!a.isIE, 'IE');
+  t.true(!a.isSafari, 'Safari');
+  t.true(!a.isFirefox, 'Firefox');
+  t.true(!a.isWebkit, 'Webkit');
+  t.true(a.isChrome, 'Chrome');
+  t.true(!a.isKonqueror, 'Konqueror');
+  t.true(a.isDesktop, 'Desktop');
+  t.true(!a.isWindows, 'Windows');
+  t.true(!a.isLinux, 'Linux');
+  t.true(a.isMac, 'Mac');
+  t.true(!a.isWindowsPhone, 'Windows Phone');
+  t.is(a.version, '59.0.3071.115');
+  t.true(!a.isIECompatibilityMode);
+  t.is(a.electronVersion, '1.8.3');
+});
