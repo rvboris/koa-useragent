@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
-    "lint": "node_modules/.bin/eslint ./",
+    "lint": "eslint ./",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
@@ -19,15 +19,15 @@
     "url": "https://github.com/rvboris/koa-useragent.git"
   },
   "devDependencies": {
-    "ava": "^0.18.2",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.3",
-    "koa": "^2.2.0",
-    "semantic-release": "^6.3.2",
-    "supertest": "^3.0.0"
+    "ava": "^0.25.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "koa": "^2.6.1",
+    "semantic-release": "^15.10.8",
+    "supertest": "^3.3.0"
   },
   "engines": {
     "node": ">=7.6.0"

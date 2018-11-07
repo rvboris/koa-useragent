@@ -452,8 +452,8 @@ test('Windows XP Chrome', (t) => {
 });
 
 test('Windows Phone 8', (t) => {
-  const s = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; ' +
-    'Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)';
+  const s = 'Mozilla/5.0 (compatible; MSIE 10.0; Windows Phone 8.0; '
+    + 'Trident/6.0; IEMobile/10.0; ARM; Touch; NOKIA; Lumia 920)';
 
   const a = new UserAgent(s);
 
@@ -625,8 +625,8 @@ test('Android Samsung', (t) => {
 // Source:
 // Chrome UA Spoofer
 test('Android Xoom', (t) => {
-  const s = 'Mozilla/5.0 (Linux; U; Android 3.0; en-us; Xoom Build/HRI39) AppleWebKit/534.13' +
-    ' (KHTML, like Gecko) Version/4.0 Safari/534.13';
+  const s = 'Mozilla/5.0 (Linux; U; Android 3.0; en-us; Xoom Build/HRI39) AppleWebKit/534.13'
+    + ' (KHTML, like Gecko) Version/4.0 Safari/534.13';
 
   const a = new UserAgent(s);
 
@@ -655,8 +655,8 @@ test('Android Xoom', (t) => {
 // Source
 // Chrome UA Spoofer
 test('iPhone 4', (t) => {
-  const s = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9' +
-    ' (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5';
+  const s = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9'
+    + ' (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5';
 
   const a = new UserAgent(s);
 
@@ -684,9 +684,9 @@ test('iPhone 4', (t) => {
 // Source:
 // http://java.net/jira/browse/USER_AGENT_UTILS-6
 test('Bada OS browser', (t) => {
-  const s = 'Mozilla/5.0 (SAMSUNG; SAMSUNG-GT-S8500/S8500NEJE5; U; Bada/1.0; fr-fr) AppleWebKit/533.1' +
-    ' (KHTML, like Gecko) Dolfin/2.0 Mobile WVGA SMM-MMS/1.2.0 NexPlayer/3.0 profile/MIDP-2.1 ' +
-    'configuration/CLDC-1.1 OPN-B';
+  const s = 'Mozilla/5.0 (SAMSUNG; SAMSUNG-GT-S8500/S8500NEJE5; U; Bada/1.0; fr-fr) AppleWebKit/533.1'
+    + ' (KHTML, like Gecko) Dolfin/2.0 Mobile WVGA SMM-MMS/1.2.0 NexPlayer/3.0 profile/MIDP-2.1 '
+    + 'configuration/CLDC-1.1 OPN-B';
 
   const a = new UserAgent(s);
 
@@ -701,7 +701,7 @@ test('Bada OS browser', (t) => {
   t.true(!a.isIE, 'IE');
   t.true(!a.isSafari, 'Safari');
   t.true(!a.isFirefox, 'Firefox');
-  t.true(!a.isWebkit, 'Webkit');
+  t.true(a.isWebkit, 'Webkit');
   t.true(!a.isChrome, 'Chrome');
   t.true(!a.isKonqueror, 'Konqueror');
   t.true(!a.isDesktop, 'Desktop');
@@ -709,7 +709,7 @@ test('Bada OS browser', (t) => {
   t.true(!a.isLinux, 'Linux');
   t.true(!a.isMac, 'Mac');
   t.true(!a.isWindowsPhone, 'Windows Phone');
-  t.is(a.version, undefined);
+  t.is(a.version, '533.1');
 });
 
 test('America Online Browser', (t) => {
@@ -960,8 +960,8 @@ test('Windows XP IE 7.0 - Compatibility mode (invalid mode)', (t) => {
 });
 
 test('Windows XP IE 9.0 - Compatibility mode', (t) => {
-  const s = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; ' +
-    '.NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C)';
+  const s = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; WOW64; Trident/5.0; SLCC2; '
+    + '.NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; Media Center PC 6.0; .NET4.0C)';
 
   const a = new UserAgent(s);
 
@@ -989,8 +989,8 @@ test('Windows XP IE 9.0 - Compatibility mode', (t) => {
 });
 
 test('Mac OSX Opera 30', (t) => {
-  const s = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko)' +
-    'Chrome/43.0.2357.125 Safari/537.36 OPR/30.0.1835.88';
+  const s = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko)'
+    + 'Chrome/43.0.2357.125 Safari/537.36 OPR/30.0.1835.88';
 
   const a = new UserAgent(s);
 
@@ -1018,8 +1018,8 @@ test('Mac OSX Opera 30', (t) => {
 });
 
 test('Microsoft Edge 12', (t) => {
-  const s = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)' +
-    ' Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
+  const s = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko)'
+    + ' Chrome/39.0.2171.71 Safari/537.36 Edge/12.0';
 
   const a = new UserAgent(s);
 
@@ -1048,8 +1048,8 @@ test('Microsoft Edge 12', (t) => {
 });
 
 test('Microsoft Edge Mobile', (t) => {
-  const s = 'Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko)' +
-    ' Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0';
+  const s = 'Mozilla/5.0 (Windows Phone 10.0; Android 4.2.1; DEVICE INFO) AppleWebKit/537.36 (KHTML, like Gecko)'
+    + ' Chrome/39.0.2171.71 Mobile Safari/537.36 Edge/12.0';
 
   const a = new UserAgent(s);
 
