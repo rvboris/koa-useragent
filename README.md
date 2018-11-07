@@ -5,7 +5,7 @@ koa-useragent
 ![CircleCI branch](https://img.shields.io/circleci/project/github/rvboris/koa-useragent/master.svg)
 [![NPM version](https://badge.fury.io/js/koa-useragent.svg)](http://badge.fury.io/js/koa-useragent)
 
-[![NPM](https://nodei.co/npm/koa-useragent.png?downloads=true)](https://nodei.co/npm/koa-useragent/)
+[![NPM](https://nodei.co/npm/koa-useragent.png?downloads=true)](https://nodei.co/npm/koa-useragent/) [![Greenkeeper badge](https://badges.greenkeeper.io/rvboris/koa-useragent.svg)](https://greenkeeper.io/)
 
 **Fast Middleware exposing user-agent for [koa.js](http://koajs.com/) based on [express-useragent](https://github.com/biggora/express-useragent)**
 
