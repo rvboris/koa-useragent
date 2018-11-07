@@ -1,6 +1,6 @@
 koa-useragent
 =====
-
+[![Greenkeeper badge](https://badges.greenkeeper.io/rvboris/koa-useragent.svg)](https://greenkeeper.io/)
 ![CircleCI branch](https://img.shields.io/circleci/project/github/rvboris/koa-useragent/master.svg)
 ![npm](https://img.shields.io/npm/v/koa-useragent.svg)
 
