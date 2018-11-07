@@ -1,7 +1,8 @@
 koa-useragent
 =====
 
-[![build status](https://secure.travis-ci.org/rvboris/koa-useragent.png)](http://travis-ci.org/rvboris/koa-useragent)
+
+![CircleCI branch](https://img.shields.io/circleci/project/github/rvboris/koa-useragent/master.svg)
 [![NPM version](https://badge.fury.io/js/koa-useragent.svg)](http://badge.fury.io/js/koa-useragent)
 
 [![NPM](https://nodei.co/npm/koa-useragent.png?downloads=true)](https://nodei.co/npm/koa-useragent/)
@@ -52,7 +53,7 @@ Module provides details such as the following:
 
 ### Author
 
-Boris Ryabov (contact@bryabov.ru).
+Boris Ryabov (contact@bsryabov.ru).
 
 Based on [express-useragent](https://github.com/biggora/express-useragent) by Aleksej Gordejev (aleksej@gordejev.lv).
 
@@ -60,7 +61,7 @@ Based on [express-useragent](https://github.com/biggora/express-useragent) by Al
 
 (The MIT License)
 
-Copyright (c) 2015 Boris Ryabov <contact@bryabov.ru>
+Copyright (c) 2018 Boris Ryabov <contact@bsryabov.ru>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -84,6 +85,5 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ### Resources
 
-- Visit the [author website](http://www.bryabov.ru).
-- Follow [@rvboris](https://twitter.com/#!/rvboris) on Twitter for updates.
+- Visit the [author website](http://www.bsryabov.ru).
 - Report issues on the [github issues](https://github.com/rvboris/koa-rvboris/issues) page.
