@@ -8,9 +8,6 @@ koa-useragent
 
 ----
 
-### Koa2 support
-**After version 1.0.0 it supports koa 2 and required node >= 7.6.0, if you need older version don't update**
-
 ### Installation
 
     $ npm install koa-useragent
@@ -46,6 +43,14 @@ Module provides details such as the following:
   "source":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.79 Safari/535.11"
 }
 
+```
+
+### Typescript support
+
+As of version 1.2.0, the library has type typescript definition file. You can install them from npm.
+
+```
+npm install --save-dev @types/koa-useragent
 ```
 
 ### Author
