@@ -27,7 +27,7 @@
     "eslint-plugin-react": "^7.11.1",
     "koa": "^2.6.1",
     "semantic-release": "^15.10.8",
-    "supertest": "^3.3.0"
+    "supertest": "^3.4.1"
   },
   "engines": {
     "node": ">=7.6.0"
