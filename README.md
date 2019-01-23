@@ -63,7 +63,7 @@ Based on [express-useragent](https://github.com/biggora/express-useragent) by Al
 
 (The MIT License)
 
-Copyright (c) 2018 Boris Ryabov <contact@bsryabov.ru>
+Copyright (c) 2019 Boris Ryabov <contact@bsryabov.ru>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
