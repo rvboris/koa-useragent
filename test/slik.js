@@ -26,7 +26,7 @@ test('Macintosh Silk', (t) => {
   t.true(!userAgent.isWindowsPhone, 'Windows Phone');
   t.is(userAgent.version, '5.0');
   t.true(userAgent.isSilk, 'Silk');
-  t.true(userAgent.SilkAccelerated, true);
+  t.is(userAgent.SilkAccelerated, true);
 });
 
 test('Android Silk', (t) => {
@@ -54,7 +54,7 @@ test('Android Silk', (t) => {
   t.true(!userAgent.isWindowsPhone, 'Windows Phone');
   t.is(userAgent.version, '4.0');
   t.true(userAgent.isSilk, 'Silk');
-  t.true(userAgent.SilkAccelerated, true);
+  t.is(userAgent.SilkAccelerated, true);
 });
 
 test('Kindle Fire HDX 7 Tablet', (t) => {
@@ -82,7 +82,7 @@ test('Kindle Fire HDX 7 Tablet', (t) => {
   t.true(!userAgent.isWindowsPhone, 'Windows Phone');
   t.is(userAgent.version, '34.0.1847.137');
   t.true(userAgent.isSilk, 'Silk');
-  t.true(!userAgent.SilkAccelerated, true);
+  t.is(!userAgent.SilkAccelerated, true);
 });
 
 test('Kindle Fire Desktop', (t) => {
@@ -110,7 +110,7 @@ test('Kindle Fire Desktop', (t) => {
   t.true(!userAgent.isWindowsPhone, 'Windows Phone');
   t.is(userAgent.version, '34.0.1847.137');
   t.true(userAgent.isSilk, 'Silk');
-  t.true(!userAgent.SilkAccelerated, true);
+  t.is(!userAgent.SilkAccelerated, true);
 });
 
 test('Kindle Fire HDX 7 Mobile', (t) => {
@@ -138,5 +138,5 @@ test('Kindle Fire HDX 7 Mobile', (t) => {
   t.true(!userAgent.isWindowsPhone, 'Windows Phone');
   t.is(userAgent.version, '34.0.1847.138');
   t.true(userAgent.isSilk, 'Silk');
-  t.true(!userAgent.SilkAccelerated, true);
+  t.is(!userAgent.SilkAccelerated, true);
 });
