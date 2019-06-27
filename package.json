@@ -19,12 +19,15 @@
     "url": "https://github.com/rvboris/koa-useragent.git"
   },
   "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
     "ava": "^2.1.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.14.2",
+    "husky": "^2.7.0",
     "koa": "^2.7.0",
     "semantic-release": "^15.13.18",
     "supertest": "^4.0.2"
@@ -32,5 +35,10 @@
   "engines": {
     "node": ">=7.6.0"
   },
-  "version": "0.0.0-development"
+  "version": "0.0.0-development",
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
