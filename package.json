@@ -38,6 +38,7 @@
   "version": "0.0.0-development",
   "husky": {
     "hooks": {
+      "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   }
