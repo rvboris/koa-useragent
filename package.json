@@ -41,5 +41,8 @@
       "pre-commit": "npm run lint",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "express-useragent": "^1.0.13"
   }
 }
