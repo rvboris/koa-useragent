@@ -3,7 +3,7 @@
  */
 
 const test = require('ava');
-const UserAgent = require('../lib/useragent');
+const UserAgent = require('../lib/useragent.js');
 
 test('iPad 2', (t) => {
   const s = 'Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46'

@@ -1,5 +1,5 @@
 const test = require('ava');
-const UserAgent = require('../lib/useragent');
+const UserAgent = require('../lib/useragent.js');
 
 test('Macintosh Silk', (t) => {
   const source = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.0.13.81_10003810) '

@@ -3,7 +3,7 @@ const test = require('ava');
 const request = require('supertest');
 const Koa = require('koa');
 
-const userAgent = require('../');
+const userAgent = require('../index.js').default;
 
 test('koa middleware', async (t) => {
   const app = new Koa();

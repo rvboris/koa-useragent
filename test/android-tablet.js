@@ -6,7 +6,7 @@
  * */
 
 const test = require('ava');
-const UserAgent = require('../lib/useragent');
+const UserAgent = require('../lib/useragent.js');
 
 test('Andriod Tablet', (t) => {
   let source = '';
