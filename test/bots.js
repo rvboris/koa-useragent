@@ -4,8 +4,6 @@
 const test = require('ava');
 const UserAgent = require('../lib/useragent.js');
 
-console.log(UserAgent)
-
 test('Arbitrary bot UA', (t) => {
   const source = 'sockbot/3.1.0-RC1 (Linux x86_64) (nodejs 5.10.1) (owner:fred user:george)';
   const userAgent = new UserAgent(source);

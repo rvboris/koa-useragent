@@ -4,10 +4,10 @@
   "main": "index.js",
   "scripts": {
     "test": "ava",
-    "lint": "tslint ./",
+    "lint": "eslint ./**/*.ts",
     "build": "(rm index.d.ts index.js lib/useragent.d.ts lib/useragent.js || echo 'deleted') && tsc --declaration -p tsconfig.json",
     "ci": "npm run build && npm test",
-    "semantic-release": "semantic-release --branch temp/x"
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "koa",
@@ -23,12 +23,18 @@
   "devDependencies": {
     "@commitlint/cli": "^8.0.0",
     "@commitlint/config-conventional": "^8.0.0",
+    "@typescript-eslint/eslint-plugin-tslint": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
     "ava": "^2.1.0",
     "eslint": "^6.0.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jest": "^22.14.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-only-warn": "^1.0.1",
     "eslint-plugin-react": "^7.14.2",
+    "eslint-plugin-unicorn": "^10.0.0",
+    "eslint-plugin-wix-editor": "^2.0.0",
     "husky": "^2.7.0",
     "koa": "^2.7.0",
     "semantic-release": "^15.13.18",
