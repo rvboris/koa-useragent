@@ -11,7 +11,7 @@ test('koa middleware', async (t: ExecutionContext) => {
 
     t.plan(1);
 
-    app.use(async (context, next: () => void) => {
+    app.use(async (context: Context, next: () => void) => {
         t.true(!!context.userAgent);
         await next();
     });
