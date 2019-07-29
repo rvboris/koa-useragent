@@ -1,10 +1,10 @@
 /**
 * @author Luiz Freneda <lfreneda@gmail.com>
 */
-const test = require('ava');
-const UserAgent = require('../lib/useragent.js');
+import test, {ExecutionContext} from 'ava';
+import UserAgent from '../lib/useragent';
 
-test('Arbitrary bot UA', (t) => {
+test('Arbitrary bot UA', (t: ExecutionContext) => {
   const source = 'sockbot/3.1.0-RC1 (Linux x86_64) (nodejs 5.10.1) (owner:fred user:george)';
   const userAgent = new UserAgent(source);
 
@@ -40,7 +40,7 @@ test('Arbitrary bot UA', (t) => {
   t.is(userAgent.version, '3.1.0-RC1');
 });
 
-test('Baiduspider Bot', (t) => {
+test('Baiduspider Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; Baiduspider/2.0; +http://www.baidu.com/search/spider.html)';
   const userAgent = new UserAgent(source);
 
@@ -74,7 +74,7 @@ test('Baiduspider Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Apple Bot', (t) => {
+test('Apple Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/600.2.5 (KHTML, like Gecko) Version/8.0.2 Safari/600.2.5 (Applebot/0.1)';
   const userAgent = new UserAgent(source);
 
@@ -108,7 +108,7 @@ test('Apple Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Pingdom Bot', (t) => {
+test('Pingdom Bot', (t: ExecutionContext) => {
   const source = 'Pingdom.com_bot_version_1.4_(http://www.pingdom.com/)';
   const userAgent = new UserAgent(source);
 
@@ -142,7 +142,7 @@ test('Pingdom Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Google Bot', (t) => {
+test('Google Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (iPhone; CPU iPhone OS 8_3 like Mac OS X) AppleWebKit/537.36 (KHTML, like Gecko; Google Page Speed Insights) Version/8.0 Mobile/12F70 Safari/600.1.4';
   const userAgent = new UserAgent(source);
 
@@ -177,7 +177,7 @@ test('Google Bot', (t) => {
 });
 
 /** new bot's * */
-test('BLEX Bot', (t) => {
+test('BLEX Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; BLEXBot/1.0; +http://webmeup-crawler.com/)';
   const userAgent = new UserAgent(source);
 
@@ -210,7 +210,7 @@ test('BLEX Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Orange Bot', (t) => {
+test('Orange Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; OrangeBot/2.0; support.orangebot@orange.com)';
   const userAgent = new UserAgent(source);
 
@@ -243,7 +243,7 @@ test('Orange Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('SMT Bot', (t) => {
+test('SMT Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (Windows NT 6.1) (compatible; SMTBot/1.0; +http://www.similartech.com/smtbot)';
   const userAgent = new UserAgent(source);
 
@@ -276,7 +276,7 @@ test('SMT Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Qwantify Bot', (t) => {
+test('Qwantify Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; Qwantify/2.3w; +https://www.qwant.com/)/2.3w';
   const userAgent = new UserAgent(source);
 
@@ -309,7 +309,7 @@ test('Qwantify Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('MJ12 Bot', (t) => {
+test('MJ12 Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; MJ12bot/v1.4.5; http://www.majestic12.co.uk/bot.php?+)';
   const userAgent = new UserAgent(source);
 
@@ -342,7 +342,7 @@ test('MJ12 Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Ahrefs Bot', (t) => {
+test('Ahrefs Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; AhrefsBot/5.1; +http://ahrefs.com/robot/)';
   const userAgent = new UserAgent(source);
 
@@ -375,7 +375,7 @@ test('Ahrefs Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Panscient Bot', (t) => {
+test('Panscient Bot', (t: ExecutionContext) => {
   const source = 'panscient.com';
   const userAgent = new UserAgent(source);
 
@@ -408,7 +408,7 @@ test('Panscient Bot', (t) => {
   t.true(!userAgent.isAndroidTablet, 'AndroidTablet');
 });
 
-test('Seznam Bot', (t) => {
+test('Seznam Bot', (t: ExecutionContext) => {
   const source = 'Mozilla/5.0 (compatible; SeznamBot/3.2; +http://napoveda.seznam.cz/en/seznambot-intro/)';
   const userAgent = new UserAgent(source);
 
