@@ -1,7 +1,7 @@
-import test, {ExecutionContext} from 'ava';
-import Koa, {Context} from 'koa';
-const http = require('http');
-const request = require('supertest');
+import test, { ExecutionContext } from 'ava';
+import Koa, { Context } from 'koa';
+import http from 'http';
+import request from 'supertest';
 import userAgent from '../index';
 
 test('koa middleware', async (t: ExecutionContext) => {

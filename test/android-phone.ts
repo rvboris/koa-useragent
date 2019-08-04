@@ -4,7 +4,7 @@
  * http://android-developers.blogspot.com/2010/12/android-browser-user-agent-issues.html
  * Based on the above post to detect the Android tablet.
  * */
-import test, {ExecutionContext} from 'ava';
+import test, { ExecutionContext } from 'ava';
 import UserAgent from '../lib/useragent';
 
 test('Andriod Phone', (t: ExecutionContext) => {

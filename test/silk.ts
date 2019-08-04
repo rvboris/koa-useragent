@@ -1,17 +1,13 @@
-/**
- * Created by aleksejs.gordejevs on 2/7/2018.
- */
 import test, { ExecutionContext } from 'ava';
 import UserAgent from '../lib/useragent';
 
-test('iPad 2', (t: ExecutionContext) => {
-    const source = 'Mozilla/5.0 (iPad; CPU OS 5_0 like Mac OS X) AppleWebKit/534.46'
-        + ' (KHTML, like Gecko) Version/5.1 Mobile/9A334 Safari/7534.48.3';
+test('Macintosh Silk', (t: ExecutionContext) => {
+    const source = 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_3; en-us; Silk/1.0.13.81_10003810) '
+        + 'AppleWebKit/533.16 (KHTML, like Gecko) Version/5.0 Safari/533.16 Silk-Accelerated=true';
     const userAgent = new UserAgent(source);
 
-    t.true(userAgent.isAuthoritative, 'Authoritative');
-    t.true(userAgent.isMobile, 'Mobile');
-    t.true(userAgent.isiPad, 'iPad');
+    t.true(!userAgent.isMobile, 'Mobile');
+    t.true(!userAgent.isiPad, 'iPad');
     t.true(!userAgent.isiPod, 'iPod');
     t.true(!userAgent.isiPhone, 'iPhone');
     t.true(!userAgent.isAndroid, 'Android');
@@ -23,56 +19,26 @@ test('iPad 2', (t: ExecutionContext) => {
     t.true(!userAgent.isWebkit, 'Webkit');
     t.true(!userAgent.isChrome, 'Chrome');
     t.true(!userAgent.isKonqueror, 'Konqueror');
-    t.true(!userAgent.isDesktop, 'Desktop');
+    t.true(userAgent.isDesktop, 'Desktop');
     t.true(!userAgent.isWindows, 'Windows');
     t.true(!userAgent.isLinux, 'Linux');
     t.true(userAgent.isMac, 'Mac');
     t.true(!userAgent.isWindowsPhone, 'Windows Phone');
-    t.is(userAgent.version, '5.1');
+    t.is(userAgent.version, '5.0');
+    t.true(userAgent.isSilk, 'Silk');
+    t.is(userAgent.SilkAccelerated, true);
 });
 
-test('Chrome iOS', (t: ExecutionContext) => {
-    const source = 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko)'
-        + ' CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1';
-    const userAgent = new UserAgent(source);
-
-    t.true(userAgent.isAuthoritative, 'Authoritative');
-    t.true(userAgent.isMobile, 'Mobile');
-    t.true(!userAgent.isiPad, 'iPad');
-    t.true(!userAgent.isiPod, 'iPod');
-    t.true(userAgent.isiPhone, 'iPhone');
-    t.true(!userAgent.isAndroid, 'Android');
-    t.true(!userAgent.isBlackberry, 'Blackberry');
-    t.true(!userAgent.isOpera, 'Opera');
-    t.true(!userAgent.isIE, 'IE');
-    t.true(!userAgent.isEdge, 'Edge');
-    t.true(!userAgent.isSafari, 'Safari');
-    t.true(!userAgent.isFirefox, 'Firefox');
-    t.true(!userAgent.isWebkit, 'Webkit');
-    t.true(userAgent.isChrome, 'Chrome');
-    t.true(!userAgent.isKonqueror, 'Konqueror');
-    t.true(!userAgent.isDesktop, 'Desktop');
-    t.true(!userAgent.isWindows, 'Windows');
-    t.true(!userAgent.isLinux, 'Linux');
-    t.true(userAgent.isMac, 'Mac');
-    t.true(!userAgent.isWindowsPhone, 'Windows Phone');
-    t.true(!userAgent.isFacebook, 'Facebook');
-    t.is(userAgent.version, '56.0.2924.75');
-    t.true(!userAgent.isIECompatibilityMode);
-});
-
-// Source
-// Chrome UA Spoofer
-test('iPhone 4', (t: ExecutionContext) => {
-    const source = 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_3_2 like Mac OS X; en-us) AppleWebKit/533.17.9'
-        + ' (KHTML, like Gecko) Version/5.0.2 Mobile/8H7 Safari/6533.18.5';
+test('Android Silk', (t: ExecutionContext) => {
+    const source = 'Mozilla/5.0 (Linux; U; Android 2.3.4; en-us; Silk/1.0.13.81_10003810) AppleWebKit/533.1 (KHTML, like Gecko) '
+        + 'Version/4.0 Mobile Safari/533.1 Silk-Accelerated=true';
     const userAgent = new UserAgent(source);
 
     t.true(userAgent.isMobile, 'Mobile');
     t.true(!userAgent.isiPad, 'iPad');
     t.true(!userAgent.isiPod, 'iPod');
-    t.true(userAgent.isiPhone, 'iPhone');
-    t.true(!userAgent.isAndroid, 'Android');
+    t.true(!userAgent.isiPhone, 'iPhone');
+    t.true(userAgent.isAndroid, 'Android');
     t.true(!userAgent.isBlackberry, 'Blackberry');
     t.true(!userAgent.isOpera, 'Opera');
     t.true(!userAgent.isIE, 'IE');
@@ -83,59 +49,94 @@ test('iPhone 4', (t: ExecutionContext) => {
     t.true(!userAgent.isKonqueror, 'Konqueror');
     t.true(!userAgent.isDesktop, 'Desktop');
     t.true(!userAgent.isWindows, 'Windows');
-    t.true(!userAgent.isLinux, 'Linux');
-    t.true(userAgent.isMac, 'Mac');
+    t.true(userAgent.isLinux, 'Linux');
+    t.true(!userAgent.isMac, 'Mac');
     t.true(!userAgent.isWindowsPhone, 'Windows Phone');
+    t.is(userAgent.version, '4.0');
+    t.true(userAgent.isSilk, 'Silk');
+    t.is(userAgent.SilkAccelerated, true);
 });
 
-test('iOS AlamoFire', (t: ExecutionContext) => {
-    const source = 'iOS-Example/1.0 (com.alamofire.iOS-Example; build:1; iOS 10.0.0) Alamofire/4.0.0';
+test('Kindle Fire HDX 7 Tablet', (t: ExecutionContext) => {
+    const source = 'Mozilla/5.0 (Linux; U; Android 4.2.2; en-us; KFTHWI Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) '
+        + 'Silk/3.22 like Chrome/34.0.1847.137 Safari/537.36';
     const userAgent = new UserAgent(source);
 
     t.true(userAgent.isMobile, 'Mobile');
     t.true(!userAgent.isiPad, 'iPad');
     t.true(!userAgent.isiPod, 'iPod');
-    t.true(userAgent.isiPhone, 'iPhone');
-    t.true(!userAgent.isAndroid, 'Android');
+    t.true(!userAgent.isiPhone, 'iPhone');
+    t.true(userAgent.isAndroid, 'Android');
     t.true(!userAgent.isBlackberry, 'Blackberry');
     t.true(!userAgent.isOpera, 'Opera');
     t.true(!userAgent.isIE, 'IE');
-    t.true(userAgent.isAlamoFire, 'AlamoFire');
     t.true(!userAgent.isSafari, 'Safari');
     t.true(!userAgent.isFirefox, 'Firefox');
     t.true(!userAgent.isWebkit, 'Webkit');
-    t.true(!userAgent.isChrome, 'Chrome');
+    t.true(userAgent.isChrome, 'Chrome');
     t.true(!userAgent.isKonqueror, 'Konqueror');
     t.true(!userAgent.isDesktop, 'Desktop');
     t.true(!userAgent.isWindows, 'Windows');
-    t.true(!userAgent.isLinux, 'Linux');
+    t.true(userAgent.isLinux, 'Linux');
     t.true(!userAgent.isMac, 'Mac');
     t.true(!userAgent.isWindowsPhone, 'Windows Phone');
-    t.is(userAgent.version, '4.0.0');
+    t.is(userAgent.version, '34.0.1847.137');
+    t.true(userAgent.isSilk, 'Silk');
+    t.is(!userAgent.SilkAccelerated, true);
 });
 
-test('iPhone like OS X', (t: ExecutionContext) => {
-    const source = 'Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_1 like Mac OS X) '
-        + 'AppleWebKit/602.1.50 (KHTML, like Gecko) Mobile/14A403';
+test('Kindle Fire Desktop', (t: ExecutionContext) => {
+    const source = 'Mozilla/5.0 (X11; Linux x86_64; U; en-us) AppleWebKit/537.36 (KHTML, like Gecko) '
+        + 'Silk/3.22 like Chrome/34.0.1847.137 Safari/537.36';
     const userAgent = new UserAgent(source);
 
-    t.true(userAgent.isMobile, 'Mobile');
+    t.true(!userAgent.isMobile, 'Mobile');
     t.true(!userAgent.isiPad, 'iPad');
     t.true(!userAgent.isiPod, 'iPod');
-    t.true(userAgent.isiPhone, 'iPhone');
+    t.true(!userAgent.isiPhone, 'iPhone');
     t.true(!userAgent.isAndroid, 'Android');
     t.true(!userAgent.isBlackberry, 'Blackberry');
     t.true(!userAgent.isOpera, 'Opera');
     t.true(!userAgent.isIE, 'IE');
     t.true(!userAgent.isSafari, 'Safari');
     t.true(!userAgent.isFirefox, 'Firefox');
-    t.true(userAgent.isWebkit, 'Webkit');
-    t.true(!userAgent.isChrome, 'Chrome');
+    t.true(!userAgent.isWebkit, 'Webkit');
+    t.true(userAgent.isChrome, 'Chrome');
+    t.true(!userAgent.isKonqueror, 'Konqueror');
+    t.true(userAgent.isDesktop, 'Desktop');
+    t.true(!userAgent.isWindows, 'Windows');
+    t.true(userAgent.isLinux, 'Linux');
+    t.true(!userAgent.isMac, 'Mac');
+    t.true(!userAgent.isWindowsPhone, 'Windows Phone');
+    t.is(userAgent.version, '34.0.1847.137');
+    t.true(userAgent.isSilk, 'Silk');
+    t.is(!userAgent.SilkAccelerated, true);
+});
+
+test('Kindle Fire HDX 7 Mobile', (t: ExecutionContext) => {
+    const source = 'Mozilla/5.0 (Linux; U; Android 4.2.2; en-us; KFTHWI Build/JDQ39) AppleWebKit/537.36 (KHTML, like Gecko) '
+        + 'Silk/3.22 like Chrome/34.0.1847.138 Safari/537.36';
+    const userAgent = new UserAgent(source);
+
+    t.true(userAgent.isMobile, 'Mobile');
+    t.true(!userAgent.isiPad, 'iPad');
+    t.true(!userAgent.isiPod, 'iPod');
+    t.true(!userAgent.isiPhone, 'iPhone');
+    t.true(userAgent.isAndroid, 'Android');
+    t.true(!userAgent.isBlackberry, 'Blackberry');
+    t.true(!userAgent.isOpera, 'Opera');
+    t.true(!userAgent.isIE, 'IE');
+    t.true(!userAgent.isSafari, 'Safari');
+    t.true(!userAgent.isFirefox, 'Firefox');
+    t.true(!userAgent.isWebkit, 'Webkit');
+    t.true(userAgent.isChrome, 'Chrome');
     t.true(!userAgent.isKonqueror, 'Konqueror');
     t.true(!userAgent.isDesktop, 'Desktop');
     t.true(!userAgent.isWindows, 'Windows');
-    t.true(!userAgent.isLinux, 'Linux');
-    t.true(userAgent.isMac, 'Mac');
+    t.true(userAgent.isLinux, 'Linux');
+    t.true(!userAgent.isMac, 'Mac');
     t.true(!userAgent.isWindowsPhone, 'Windows Phone');
-    t.is(userAgent.version, '602.1.50');
+    t.is(userAgent.version, '34.0.1847.138');
+    t.true(userAgent.isSilk, 'Silk');
+    t.is(!userAgent.SilkAccelerated, true);
 });

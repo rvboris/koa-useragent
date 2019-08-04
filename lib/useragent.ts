@@ -1,217 +1,224 @@
-const useragent = require('express-useragent');
+import useragent from 'express-useragent';
 
-export default class UserAgent implements ExpressUseragent.UserAgent {
-    get isEpiphany() {
-        return this.agent.isEpiphany;
-    }
+// express-useragent's type definition is not so correct yet, so use a modified type for now
+type ModifiedUserAgent = ExpressUseragent.UserAgent & {
+  SilkAccelerated: boolean;
+  isFacebook: boolean;
+  isAuthoritative: boolean;
+  isAlamoFire: boolean;
+  isPhantomJS: boolean;
+};
 
-    get isDesktop(): boolean {
-        return this.agent.isDesktop;
-    }
+export default class UserAgent implements ModifiedUserAgent {
+  private readonly _agent: ModifiedUserAgent;
 
-    get isWindows(): boolean {
-        return this.agent.isWindows;
-    }
+  public constructor(source = 'unknown') {
+    this._agent = useragent.parse(source) as ModifiedUserAgent;
+  }
 
-    get isWindowsPhone(): boolean {
-        return this.agent.isWindowsPhone;
-    }
+  public get isEpiphany(): boolean {
+    return this._agent.isEpiphany;
+  }
 
-    get isLinux(): boolean {
-        return this.agent.isLinux;
-    }
+  public get isDesktop(): boolean {
+    return this._agent.isDesktop;
+  }
 
-    get isLinux64(): boolean {
-        return this.agent.isLinux64;
-    }
+  public get isWindows(): boolean {
+    return this._agent.isWindows;
+  }
 
-    get isMac(): boolean {
-        return this.agent.isMac;
-    }
+  public get isWindowsPhone(): boolean {
+    return this._agent.isWindowsPhone;
+  }
 
-    get isChromeOS(): boolean {
-        return this.agent.isChromeOS;
-    }
+  public get isLinux(): boolean {
+    return this._agent.isLinux;
+  }
 
-    get isBada(): boolean {
-        return this.agent.isBada;
-    }
+  public get isLinux64(): boolean {
+    return this._agent.isLinux64;
+  }
 
-    get isSamsung(): boolean {
-        return this.agent.isSamsung;
-    }
+  public get isMac(): boolean {
+    return this._agent.isMac;
+  }
 
-    get isRaspberry(): boolean {
-        return this.agent.isRaspberry;
-    }
+  public get isChromeOS(): boolean {
+    return this._agent.isChromeOS;
+  }
 
-    // @types/express-useragent's type definition is not so correct
-    get isBot(): any {
-        return this.agent.isBot;
-    }
+  public get isBada(): boolean {
+    return this._agent.isBada;
+  }
 
-    get isCurl(): boolean {
-        return this.agent.isCurl;
-    }
+  public get isSamsung(): boolean {
+    return this._agent.isSamsung;
+  }
 
-    get isAndroidTablet(): boolean {
-        return this.agent.isAndroidTablet;
-    }
+  public get isRaspberry(): boolean {
+    return this._agent.isRaspberry;
+  }
 
-    get isWinJs(): boolean {
-        return this.agent.isWinJs;
-    }
+  // types definition in express-useragent is correct
+  public get isBot(): any {
+    return this._agent.isBot;
+  }
 
-    get isKindleFire(): boolean {
-        return this.agent.isKindleFire;
-    }
+  public get isCurl(): boolean {
+    return this._agent.isCurl;
+  }
 
-    get isSilk(): boolean {
-        return this.agent.isSilk;
-    }
+  public get isAndroidTablet(): boolean {
+    return this._agent.isAndroidTablet;
+  }
 
-    get isCaptive(): boolean {
-        return this.agent.isCaptive;
-    }
+  public get isWinJs(): boolean {
+    return this._agent.isWinJs;
+  }
 
-    get isSmartTV(): boolean {
-        return this.agent.isSmartTV;
-    }
+  public get isKindleFire(): boolean {
+    return this._agent.isKindleFire;
+  }
 
-    get silkAccelerated(): boolean {
-        return this.agent.silkAccelerated;
-    }
+  public get isSilk(): boolean {
+    return this._agent.isSilk;
+  }
 
-    get SilkAccelerated(): boolean {
-        return this.agent.silkAccelerated;
-    }
+  public get isCaptive(): boolean {
+    return this._agent.isCaptive;
+  }
 
-    get browser(): string {
-        return this.agent.browser;
-    }
+  public get isSmartTV(): boolean {
+    return this._agent.isSmartTV;
+  }
 
-    // @types/express-useragent's type definition is not so correct
-    get version(): any {
-        return this.agent.version;
-    }
+  public get silkAccelerated(): boolean {
+    return this._agent.silkAccelerated;
+  }
 
-    get os(): string {
-        return this.agent.os;
-    }
+  public get SilkAccelerated(): boolean {
+    return this._agent.SilkAccelerated;
+  }
 
-    get platform(): string {
-        return this.agent.platform;
-    }
+  public get browser(): string {
+    return this._agent.browser;
+  }
 
-    get geoIp(): any {
-        return this.agent.geoIp;
-    }
+  // types definition in express-useragent is correct
+  public get version(): any {
+    return this._agent.version;
+  }
 
-    get source(): string {
-        return this.agent.source;
-    }
+  public get os(): string {
+    return this._agent.os;
+  }
 
-    private readonly agent: any
+  public get platform(): string {
+    return this._agent.platform;
+  }
 
-    constructor(source = 'unknown') {
-        this.agent = useragent.parse(source);
+  public get geoIp(): string {
+    return this._agent.geoIp;
+  }
 
-        return this.agent;
-    }
+  public get source(): string {
+    return this._agent.source;
+  }
 
-    get isFacebook() {
-        return this.agent.isFacebook;
-    }
+  public get isFacebook(): boolean {
+    return this._agent.isFacebook;
+  }
 
-    get isAmaya() {
-        return this.agent.isAmaya;
-    }
+  public get isAmaya(): boolean {
+    return this._agent.isAmaya;
+  }
 
-    get isFlock() {
-        return this.agent.isFlock;
-    }
+  public get isFlock(): boolean {
+    return this._agent.isFlock;
+  }
 
-    get isSeaMonkey() {
-        return this.agent.isSeaMonkey;
-    }
+  public get isSeaMonkey(): boolean {
+    return this._agent.isSeaMonkey;
+  }
 
-    get isOmniWeb() {
-        return this.agent.isOmniWeb;
-    }
+  public get isOmniWeb(): boolean {
+    return this._agent.isOmniWeb;
+  }
 
-    get isKonqueror() {
-        return this.agent.isKonqueror;
-    }
+  public get isKonqueror(): boolean {
+    return this._agent.isKonqueror;
+  }
 
-    get isChrome() {
-        return this.agent.isChrome;
-    }
+  public get isChrome(): boolean {
+    return this._agent.isChrome;
+  }
 
-    get isWebkit() {
-        return this.agent.isWebkit;
-    }
+  public get isWebkit(): boolean {
+    return this._agent.isWebkit;
+  }
 
-    get isFirefox() {
-        return this.agent.isFirefox;
-    }
+  public get isFirefox(): boolean {
+    return this._agent.isFirefox;
+  }
 
-    get isSafari() {
-        return this.agent.isSafari;
-    }
+  public get isSafari(): boolean {
+    return this._agent.isSafari;
+  }
 
-    get isIECompatibilityMode() {
-        return this.agent.isIECompatibilityMode;
-    }
+  public get isIECompatibilityMode(): boolean {
+    return this._agent.isIECompatibilityMode;
+  }
 
-    get isEdge() {
-        return this.agent.isEdge;
-    }
+  public get isEdge(): boolean {
+    return this._agent.isEdge;
+  }
 
-    get isIE() {
-        return this.agent.isIE;
-    }
+  public get isIE(): boolean {
+    return this._agent.isIE;
+  }
 
-    get isOpera() {
-        return this.agent.isOpera;
-    }
+  public get isOpera(): boolean {
+    return this._agent.isOpera;
+  }
 
-    get isBlackberry() {
-        return this.agent.isBlackberry;
-    }
+  public get isBlackberry(): boolean {
+    return this._agent.isBlackberry;
+  }
 
-    get isMobile() {
-        return this.agent.isMobile;
-    }
+  public get isMobile(): boolean {
+    return this._agent.isMobile;
+  }
 
-    get isTablet() {
-        return this.agent.isTablet;
-    }
+  public get isTablet(): boolean {
+    return this._agent.isTablet;
+  }
 
-    get isiPad() {
-        return this.agent.isiPad;
-    }
+  public get isiPad(): boolean {
+    return this._agent.isiPad;
+  }
 
-    get isiPod() {
-        return this.agent.isiPod;
-    }
+  public get isiPod(): boolean {
+    return this._agent.isiPod;
+  }
 
-    get isiPhone() {
-        return this.agent.isiPhone;
-    }
+  public get isiPhone(): boolean {
+    return this._agent.isiPhone;
+  }
 
-    get isAndroid() {
-        return this.agent.isAndroid;
-    }
+  public get isAndroid(): boolean {
+    return this._agent.isAndroid;
+  }
 
-    get isAuthoritative() {
-        return this.agent.isAuthoritative;
-    }
+  public get isAuthoritative(): boolean {
+    return this._agent.isAuthoritative;
+  }
 
-    get isAlamoFire() {
-        return this.agent.isAlamoFire;
-    }
+  public get isAlamoFire(): boolean {
+    return this._agent.isAlamoFire;
+  }
 
-    get isPhantomJS() {
-        return this.agent.isPhantomJS;
-    }
+  public get isPhantomJS(): boolean {
+    return this._agent.isPhantomJS;
+  }
 }
