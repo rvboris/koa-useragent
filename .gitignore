@@ -1,7 +1,3 @@
 node_modules/
 cover/
-.idea
-lib/useragent.d.ts
-lib/useragent.js
-index.d.ts
-index.js
+dist/

@@ -9,7 +9,7 @@ type ModifiedUserAgent = ExpressUseragent.UserAgent & {
   isPhantomJS: boolean;
 };
 
-export default class UserAgent implements ModifiedUserAgent {
+export default class UserAgent implements ExpressUseragent.UserAgent {
   private readonly _agent: ModifiedUserAgent;
 
   public constructor(source = 'unknown') {
@@ -60,9 +60,8 @@ export default class UserAgent implements ModifiedUserAgent {
     return this._agent.isRaspberry;
   }
 
-  // types definition in express-useragent is correct
-  public get isBot(): any {
-    return this._agent.isBot;
+  public get isBot(): boolean {
+    return !!this._agent.isBot;
   }
 
   public get isCurl(): boolean {
@@ -105,9 +104,8 @@ export default class UserAgent implements ModifiedUserAgent {
     return this._agent.browser;
   }
 
-  // types definition in express-useragent is correct
-  public get version(): any {
-    return this._agent.version;
+  public get version(): string {
+    return `${this._agent.version}`;
   }
 
   public get os(): string {

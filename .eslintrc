@@ -1,44 +1,12 @@
 {
-  "root": true,
-  "env": {
-    "node": true,
-    "es6": true
-  },
   "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": 2019,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": false
-    },
-    "project": "tsconfig.json"
-  },
-  "plugins": [],
-  "extends": [
-    "airbnb",
+  "extends":  [
     "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
   ],
-  "rules": {
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true
-      }
-    ],
-    "no-useless-escape": 0,
-    "no-underscore-dangle": 0,
-    "max-len": 0,
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".ts",
-          ".tsx"
-        ]
-      }
-    }
-  },
+  "parserOptions":  {
+    "ecmaVersion":  2019,
+    "sourceType":  "module"
+  }
 }

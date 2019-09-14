@@ -14,14 +14,14 @@ jobs:
           name: install
           command: npm install
       - run:
+          name: test
+          command: npm test
+      - run:
           name: lint
           command: npm run lint
       - run:
           name: build
           command: npm run build
-      - run:
-          name: test
-          command: npm test
       - save_cache:
           paths:
             - ~/usr/local/lib/node_modules
