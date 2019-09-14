@@ -47,7 +47,9 @@ Module provides details such as the following:
 
 ### Typescript support
 
-As of version 1.2.0, the library has type typescript definition file. You can install them from npm.
+From version 2.1.0 the library has rewritten in typescript. Definitions files distribute with source files.
+
+From version 1.2.0, the library has type typescript definition file. You can install them from npm.
 
 ```
 npm install --save-dev @types/koa-useragent
