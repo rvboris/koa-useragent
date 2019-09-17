@@ -17,7 +17,7 @@ koa-useragent
 ```js
 const koa = require('koa'),
 const app = koa.app()
-const userAgent = require('koa-useragent');
+const { userAgent } = require('koa-useragent');
 
 app.use(userAgent);
 

@@ -1,7 +1,7 @@
 import { Context } from 'koa';
 import UserAgent from './lib/useragent';
 
-export default async (ctx: Context, next: () => Promise<void>): Promise<void> => {
+export const userAgent = async (ctx: Context, next: () => Promise<void>): Promise<void> => {
   const { header } = ctx.request;
   const source = header['user-agent'];
 

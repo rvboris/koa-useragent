@@ -2,7 +2,7 @@ import test, { ExecutionContext } from 'ava';
 import Koa, { Context } from 'koa';
 import http from 'http';
 import request from 'supertest';
-import userAgent from '../src/index';
+import { userAgent } from '../src/index';
 
 test('koa middleware', async (t: ExecutionContext) => {
   const app = new Koa();
