@@ -38,7 +38,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@types/express-useragent": "^0.2.22",
+    "@types/express-useragent": "^1.0.0",
     "@types/koa": "^2.0.49",
     "@types/supertest": "^2.0.8",
     "@typescript-eslint/eslint-plugin": "^2.2.0",
