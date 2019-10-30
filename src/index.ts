@@ -9,3 +9,9 @@ export const userAgent = async (ctx: Context, next: () => Promise<void>): Promis
 
   await next();
 };
+
+declare module 'koa' {
+  interface Context {
+    userAgent: UserAgent;
+  }
+}

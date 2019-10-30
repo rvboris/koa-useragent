@@ -1,7 +1,7 @@
-import useragent from 'express-useragent';
+import useragent, {Details} from 'express-useragent';
 
 // express-useragent's type definition is not so correct yet, so use a modified type for now
-type ModifiedUserAgent = ExpressUseragent.UserAgent & {
+type ModifiedUserAgent = Details & {
   SilkAccelerated: boolean;
   isFacebook: boolean;
   isAuthoritative: boolean;
@@ -9,7 +9,7 @@ type ModifiedUserAgent = ExpressUseragent.UserAgent & {
   isPhantomJS: boolean;
 };
 
-export default class UserAgent implements ExpressUseragent.UserAgent {
+export default class UserAgent implements Details {
   private readonly _agent: ModifiedUserAgent;
 
   public constructor(source = 'unknown') {
@@ -116,7 +116,7 @@ export default class UserAgent implements ExpressUseragent.UserAgent {
     return this._agent.platform;
   }
 
-  public get geoIp(): string {
+  public get geoIp(): { [key: string]: any } {
     return this._agent.geoIp;
   }
 
