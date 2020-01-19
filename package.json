@@ -44,7 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^2.6.0",
     "@typescript-eslint/eslint-plugin-tslint": "^2.6.0",
     "@typescript-eslint/parser": "^2.6.0",
-    "ava": "^2.4.0",
+    "ava": "^3.0.0",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-import": "^2.18.2",
