@@ -1,8 +1,12 @@
-import { Context } from 'koa';
+import { Middleware, ParameterizedContext, Next } from 'koa';
 import UserAgent from './lib/useragent';
 
-export const userAgent = async (ctx: Context, next: () => Promise<void>): Promise<void> => {
-  const { header } = ctx.request;
+export type UserAgentContext = {
+  userAgent: UserAgent;
+};
+
+export const userAgent: Middleware = async (ctx: ParameterizedContext, next: Next): Promise<void> => {
+  const { header } = ctx;
   const source = header['user-agent'];
 
   ctx.userAgent = new UserAgent(source);
@@ -10,8 +14,4 @@ export const userAgent = async (ctx: Context, next: () => Promise<void>): Promis
   await next();
 };
 
-declare module 'koa' {
-  interface Context {
-    userAgent: UserAgent;
-  }
-}
+export default userAgent;

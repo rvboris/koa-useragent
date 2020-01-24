@@ -15,14 +15,31 @@ koa-useragent
 ### Usage overview
 
 ```js
-const koa = require('koa'),
-const app = koa.app()
+const koa = require('koa');
+const app = koa.app();
 const { userAgent } = require('koa-useragent');
 
 app.use(userAgent);
 
 app.use(async (ctx, next) {
-    console.log(require('util').inspect(ctx.userAgent));
+  console.log(require('util').inspect(ctx.userAgent));
+});
+
+app.listen(3000);
+```
+
+### Typescript example
+
+```ts
+import Koa, { BaseContext } from 'koa';
+import { userAgent, UserAgentContext } from 'koa-useragent';
+
+const app = new Koa();
+
+app.use(userAgent);
+
+app.use<BaseContext, UserAgentContext>((ctx) => {
+  console.log(require('util').inspect(ctx.userAgent));
 });
 
 app.listen(3000);
