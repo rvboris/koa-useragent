@@ -4,9 +4,6 @@ on:
     branches: [ master, alpha ]
   pull_request:
     branches: [ master, alpha ]
-env:
-  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,4 +21,7 @@ jobs:
     - run: npm run lint
     - run: npm run build --if-present
     - run: npm test
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     - run: npx semantic-release
