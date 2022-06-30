@@ -6,6 +6,7 @@ on:
     branches: [ master, alpha ]
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,5 +23,5 @@ jobs:
     - run: npm ci
     - run: npm run lint
     - run: npm run build --if-present
-    - run: npm test -- --watch=false --browsers=ChromeHeadless
+    - run: npm test
     - run: npx semantic-release
