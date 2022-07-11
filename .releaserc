@@ -4,4 +4,4 @@ branches:
     prerelease: true
 debug: true
 ci: true
-dryRun: false
+dryRun: true
