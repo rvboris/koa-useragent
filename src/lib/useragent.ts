@@ -1,4 +1,4 @@
-import useragent, {Details} from 'express-useragent';
+import useragent, { Details } from 'express-useragent';
 
 // express-useragent's type definition is not so correct yet, so use a modified type for now
 type ModifiedUserAgent = Details & {
@@ -218,5 +218,9 @@ export default class UserAgent implements Details {
 
   public get isPhantomJS(): boolean {
     return this._agent.isPhantomJS;
+  }
+
+  public get isMobileNative(): boolean {
+    return this._agent.isMobileNative;
   }
 }

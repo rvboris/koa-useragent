@@ -1,0 +1,7 @@
+branches:
+  - master
+  - name: alpha
+    prerelease: true
+debug: true
+ci: true
+dryRun: false
